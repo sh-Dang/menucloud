@@ -1,16 +1,103 @@
-# React + Vite
+좋아요! 지금 내용은 기능 위주로 정리되어 있고, 깃허브에서 보기에 조금 딱딱할 수 있어요.
+제가 프론트엔드 프로젝트 전체를 아우르면서 보기 좋게, 한국어 깃허브용 README 형식으로 편집해드릴게요. 예쁘게 구성하고, 코드 블록, 섹션 구분, 이모지 등을 적절히 넣어서 가독성을 높였습니다.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# 🍗 Chicken POS Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Chicken POS (Point of Sale) 시스템의 프론트엔드 버전**입니다.
+React와 Vite를 기반으로 구현되었으며, 실시간 테이블 관리와 주문/결제 기능을 직관적으로 제공합니다.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 프로젝트 구조
 
-## Expanding the ESLint configuration
+```
+chickenpos-frontend/
+├─ public/            # 정적 파일 (이미지, 아이콘 등)
+└─ src/
+   ├─ pages/          # 페이지 단위 컴포넌트
+   │   ├─ Main/
+   │   └─ Table/
+   ├─ components/     # 재사용 가능한 UI 컴포넌트
+   │   ├─ Modal.jsx
+   │   └─ Clock.jsx
+   └─ util/           # 유틸 함수, 라우터 설정 등
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ 주요 기능 및 변경 사항
+
+### 1️⃣ 테이블 페이지 (`Table`)
+
+* 메인 페이지와 동일한 색상 테마 적용 (연한 오렌지 배경, 오렌지 버튼/테두리)
+* '결제완료' 버튼은 `회색` 테마로 변경 → 시각적 구분 강조
+* 테이블 박스 레이아웃 최적화 (3x2 구조)
+
+### 2️⃣ 모달 컴포넌트 (`Modal`)
+
+* 주문 추가, 결제 완료 확인 등 팝업 처리 가능
+* 사용 사례:
+
+  * **주문 추가**: '주문추가' 버튼 클릭 시 팝업 표시
+  * **결제 완료 확인**: '결제완료' 버튼 클릭 시 확인 모달
+
+### 3️⃣ 시계 컴포넌트 (`Clock`)
+
+* 현재 시간을 12시간제(AM/PM)로 표시
+* 테이블 그리드 내 동적 위치 적용 (예: '홀3' 아래)
+* 시각적 강조를 위해 크기와 배치 최적화
+
+---
+
+## 🚀 설치 및 실행 방법
+
+1. **레포지토리 클론**
+
+```bash
+git clone <repository-url>
+cd chickenpos/frontend
+```
+
+2. **의존성 설치**
+
+```bash
+npm install
+```
+
+3. **개발 서버 실행**
+
+```bash
+npm run dev
+```
+
+브라우저에서 `http://localhost:5173` 접속 시 앱 확인 가능
+
+---
+
+## 📜 사용 가능한 스크립트
+
+| 명령어               | 설명           |
+| ----------------- | ------------ |
+| `npm run dev`     | 개발 서버 실행     |
+| `npm run build`   | 프로덕션 빌드      |
+| `npm run preview` | 로컬에서 빌드 미리보기 |
+| `npm run lint`    | 코드 린트        |
+
+---
+
+## 🖼️ 화면 구성
+
+* **메인 페이지**: 전체 메뉴/테이블 현황
+* **테이블 페이지**: 테이블별 주문 상태 및 결제 관리
+* **모달**: 주문 추가 / 결제 확인
+* **시계**: 현재 시간 표시
+
+---
+
+## 💡 향후 개선 계획
+
+* 테이블별 주문 내역 실시간 동기화
+* 결제 API 연동
+* 모바일/태블릿 반응형 디자인 강화
