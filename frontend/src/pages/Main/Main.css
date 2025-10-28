@@ -1,0 +1,53 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1240px;
+  height: 800px;
+  margin: auto;
+  text-align: center;
+  background-color: #FFF4E6; /* 밝은 주황색 배경 */
+  border: 1px solid #FFD5A9; /* 주황색 계열 테두리 */
+}
+
+.logo {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  gap: 30px;
+}
+
+.main-button {
+  width: 180px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #FF9800; /* 선명한 주황색 버튼 */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-button:hover {
+  background-color: #FB8C00; /* 더 어두운 주황색 */
+}
+
+/* 나가기 버튼은 회색 계열로 유지 */
+.main-button:last-child {
+  background-color: #757575;
+}
+
+.main-button:last-child:hover {
+  background-color: #616161;
+}
