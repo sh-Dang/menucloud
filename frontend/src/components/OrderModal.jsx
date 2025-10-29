@@ -1,7 +1,7 @@
-import React from 'react';
-import './Modal.css';
+import React from "react";
+import './OrderModal.css'
 
-function Modal({ isOpen, onClose, children }) {
+function OrderModal({ isOpen, onClose, children }){
   if (!isOpen) return null;
 
   return (
@@ -14,4 +14,6 @@ function Modal({ isOpen, onClose, children }) {
   );
 }
 
-export default Modal;
+
+
+export default OrderModal;
